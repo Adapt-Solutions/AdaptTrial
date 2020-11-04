@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -38,8 +39,18 @@ namespace AdaptTrial
             MenuModel.OutputText = $"The first {sequence.Count} numbers of the Fibonacci sequence are:" + string.Join(", ", sequence.Select(x => x.ToString()));
         }
 
-        public static void Banana()
+        public async void Banana()
         {
+            await Task.Delay(1000).ConfigureAwait(false);
+            Title = "One second has passed.";
+            await Task.Delay(1000).ConfigureAwait(false);
+            Title = "Two seconds have passed.";
+            await Task.Delay(1000).ConfigureAwait(false);
+            Title = "Three seconds have passed.";
+            await Task.Delay(1000).ConfigureAwait(false);
+            Title = "Four seconds have passed.";
+            await Task.Delay(1000).ConfigureAwait(false);
+            Title = "Five seconds have passed.";
         }
 
         public static void Pear()
