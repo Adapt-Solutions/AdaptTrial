@@ -9,6 +9,7 @@ namespace AdaptTrial
     {
         private ObservableCollection<string> _pageOptions = new ObservableCollection<string>();
         private string _outputText;
+        private string _frameText;
 
         public ObservableCollection<string> PageOptions
         {
@@ -28,6 +29,17 @@ namespace AdaptTrial
             {
                 if (value == _outputText) return;
                 _outputText = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string FrameText
+        {
+            get => _frameText;
+            set
+            {
+                if (value == _frameText) return;
+                _frameText = value;
                 OnPropertyChanged();
             }
         }

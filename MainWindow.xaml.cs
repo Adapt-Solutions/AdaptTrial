@@ -41,6 +41,7 @@ namespace AdaptTrial
 
         public async void Banana()
         {
+            Title = "Zero seconds have passed.";
             await Task.Delay(1000).ConfigureAwait(false);
             Title = "One second has passed.";
             await Task.Delay(1000).ConfigureAwait(false);
@@ -53,8 +54,10 @@ namespace AdaptTrial
             Title = "Five seconds have passed.";
         }
 
-        public static void Pear()
+        public async void Pear()
         {
+            await Task.Delay(1000).ConfigureAwait(false);
+            MenuModel.FrameText = "Here's some text that should appear in the bottom right corner after one second.";
         }
     }
 }

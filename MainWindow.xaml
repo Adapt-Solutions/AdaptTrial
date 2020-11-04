@@ -9,6 +9,10 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
 
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition />
             <RowDefinition />
@@ -24,7 +28,7 @@
             </adaptTrial:MenuModel>
         </Grid.DataContext>
 
-        <ItemsControl VerticalAlignment="Top" ItemsSource="{Binding Path=PageOptions}">
+        <ItemsControl Grid.ColumnSpan="2" VerticalAlignment="Top" ItemsSource="{Binding Path=PageOptions}">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
                     <StackPanel Orientation="Horizontal" />
@@ -41,7 +45,13 @@
             </ItemsControl.ItemTemplate>
         </ItemsControl>
 
-        <TextBlock Grid.Row="1" Text="{Binding Path=OutputText}" TextAlignment="Center" />
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="{Binding Path=OutputText}" TextAlignment="Center" />
+        
+        <Frame Grid.Row="1" Grid.Column="1">
+            <Frame.Content>
+                <TextBlock Text="{Binding FrameText}"/>    
+            </Frame.Content>
+        </Frame>
 
     </Grid>
 </Window>
